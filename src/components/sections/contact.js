@@ -93,7 +93,7 @@ const Contact = ({ data }) => {
         Resume
       </ResumeLink>
       <StyledFollowMe>
-        Join my network and stay connected to stay connected with me:
+        Join my network to stay connected with me:
         <StyledSocialLinks>
           <a href="https://www.instagram.com/khilan.sk" target="_blank" rel="noopener noreferrer">
             <IconInstagram />
