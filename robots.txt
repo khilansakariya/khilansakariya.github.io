@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://khilansakariyaa.github.io/sitemap.xml
+Sitemap: https://khilansakariyaa.github.io/sitemap-index.xml
 Host: https://khilansakariyaa.github.io
