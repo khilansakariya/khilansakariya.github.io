@@ -7,7 +7,7 @@ module.exports = {
   siteUrl: 'https://khilansakariyaa.github.io/',
   siteLanguage: 'en_US',
   googleAnalyticsID: 'G-GGX6C8MQBL',
-  googleVerification: 't3uVmm1uL3gc_LiPM1jLDXBxOoKtFL9a_avRMcMiL6E',
+  googleVerification: '-SWcG_-HMrbzLycO9-MTaQCFTb3kCR0blIAYWZkqShI',
   name: 'Khilan Sakariya',
   location: 'Surat, India',
   email: 'khilansakariya123@yahoo.com',
