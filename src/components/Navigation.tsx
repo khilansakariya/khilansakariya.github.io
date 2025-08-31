@@ -12,7 +12,7 @@ const navItems = [
   { name: 'About', href: '#about' },
   { name: 'Experience', href: '#experience' },
   { name: 'Skills', href: '#resume' },
-  { name: 'Resume', href: '/Khilan_Sakariya_Resume.pdf' },
+  { name: 'Resume', href: '/resume.pdf' },
   { name: 'Projects', href: '#projects' },
   { name: 'Contact', href: '#contact' },
 ];
@@ -86,7 +86,10 @@ export function Navigation() {
     
     // Small delay to ensure menu closes before scrolling
     setTimeout(() => {
-      if (href.startsWith('/')) {
+      if (href === '/resume.pdf') {
+        // Open resume in new tab
+        window.open(href, '_blank');
+      } else if (href.startsWith('/')) {
         // It's a page link (like /archive) - use Next.js router
         router.push(href);
       } else {

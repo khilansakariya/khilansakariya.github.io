@@ -23,14 +23,14 @@ export function Hero() {
     document.dispatchEvent(new CustomEvent('resume-click'));
     
     try {
-      const resumeUrl = '/Khilan_Sakariya_Resume.pdf';
+      const resumeUrl = '/resume.pdf';
       console.log('Opening resume at:', resumeUrl);
       window.open(resumeUrl, '_blank');
     } catch (error) {
       console.error('Error opening resume:', error);
       // Fallback: try to download the file
       const link = document.createElement('a');
-      link.href = '/Khilan_Sakariya_Resume.pdf';
+      link.href = '/resume.pdf';
       link.download = 'Khilan_Sakariya_Resume.pdf';
       link.click();
     }

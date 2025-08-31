@@ -45,7 +45,7 @@ export function Footer() {
     if (link === 'Archive') {
       router.push('/archive');
     } else if (link === 'Resume') {
-      window.open('/Khilan_Sakariya_Resume.pdf', '_blank');
+      window.open('/resume.pdf', '_blank');
     } else {
       const currentPath = window.location.pathname;
       
