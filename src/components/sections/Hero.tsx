@@ -9,6 +9,33 @@ export function Hero() {
     document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const handleViewResume = () => {
+    // Track resume view event
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'resume_view', {
+        event_category: 'engagement',
+        event_label: 'hero_resume_button',
+        value: 1
+      });
+    }
+    
+    // Dispatch custom event for analytics
+    document.dispatchEvent(new CustomEvent('resume-click'));
+    
+    try {
+      const resumeUrl = '/resume.pdf';
+      console.log('Opening resume at:', resumeUrl);
+      window.open(resumeUrl, '_blank');
+    } catch (error) {
+      console.error('Error opening resume:', error);
+      // Fallback: try to download the file
+      const link = document.createElement('a');
+      link.href = '/resume.pdf';
+      link.download = 'Khilan_Sakariya_Resume.pdf';
+      link.click();
+    }
+  };
+
   return (
     <div className="container-max px-4 sm:px-6 lg:px-8 text-center">
       <motion.div
@@ -72,21 +99,7 @@ export function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="btn-primary group w-full sm:w-auto px-6 py-3 sm:py-4 text-base sm:text-lg"
-            onClick={() => {
-              // Track resume view event
-              if (typeof window !== 'undefined' && window.gtag) {
-                window.gtag('event', 'resume_view', {
-                  event_category: 'engagement',
-                  event_label: 'resume_pdf_hero',
-                  value: 1
-                });
-              }
-              
-              // Dispatch custom event for analytics
-              document.dispatchEvent(new CustomEvent('resume-click'));
-              
-              window.open('/resume.pdf', '_blank');
-            }}
+            onClick={handleViewResume}
           >
             <FontAwesomeIcon icon={faFilePdf} className="mr-2 group-hover:animate-pulse" />
             Resume

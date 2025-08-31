@@ -31,7 +31,18 @@ export function Resume() {
     // Dispatch custom event for analytics
     document.dispatchEvent(new CustomEvent('resume-click'));
     
-    window.open('/resume.pdf', '_blank');
+    try {
+      const resumeUrl = '/resume.pdf';
+      console.log('Opening resume at:', resumeUrl);
+      window.open(resumeUrl, '_blank');
+    } catch (error) {
+      console.error('Error opening resume:', error);
+      // Fallback: try to download the file
+      const link = document.createElement('a');
+      link.href = '/resume.pdf';
+      link.download = 'Khilan_Sakariya_Resume.pdf';
+      link.click();
+    }
   };
 
   return (
