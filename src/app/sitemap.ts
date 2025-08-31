@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     
     // Resume and important documents
     {
-      url: `${baseUrl}/resume.pdf`,
+      url: `${baseUrl}/Khilan_Sakariya_Resume.pdf`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.8,

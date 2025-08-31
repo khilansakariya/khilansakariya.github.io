@@ -12,7 +12,7 @@ const navItems = [
   { name: 'About', href: '#about' },
   { name: 'Experience', href: '#experience' },
   { name: 'Skills', href: '#resume' },
-  { name: 'Resume', href: '/resume.pdf' },
+  { name: 'Resume', href: '/Khilan_Sakariya_Resume.pdf' },
   { name: 'Projects', href: '#projects' },
   { name: 'Contact', href: '#contact' },
 ];

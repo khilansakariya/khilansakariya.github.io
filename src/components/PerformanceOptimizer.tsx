@@ -7,7 +7,7 @@ export function PerformanceOptimizer() {
   useEffect(() => {
     // Preload critical resources
     const preloadLinks = [
-      { rel: 'preload', href: '/resume.pdf', as: 'document' },
+      { rel: 'preload', href: '/Khilan_Sakariya_Resume.pdf', as: 'document' },
       { rel: 'preload', href: '/og-image.jpg', as: 'image' },
     ];
 
