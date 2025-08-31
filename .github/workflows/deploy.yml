@@ -25,9 +25,8 @@ jobs:
       - name: Build project
         run: npm run build
         
-      - name: Export static files
+      - name: Prepare for deployment
         run: |
-          npm run export
           touch out/.nojekyll
           
       - name: Deploy to GitHub Pages
