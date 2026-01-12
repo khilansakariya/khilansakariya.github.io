@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    /* #FAFAFA - Cool White */
+    --foreground: 215 25% 27%;
+    /* #334155 - Slate 700 */
+    --card: 0 0% 100%;
+    /* White */
+    --card-foreground: 215 25% 27%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+    --primary: 199 89% 48%;
+    /* #0EA5E9 - Sky 500 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    /* #F1F5F9 - Slate 100 */
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 199 89% 48%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    /* #0F172A - Slate 900 */
+    --foreground: 210 40% 98%;
+    /* #F8FAFC - Slate 50 */
+    --card: 217 33% 17%;
+    /* #1E293B - Slate 800 */
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 199 89% 48%;
+    /* #0EA5E9 - Sky 500 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 199 89% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .container-max {
+    @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-20 lg:py-32;
+  }
+
+  .glass-card {
+    @apply bg-card/50 backdrop-blur-md border border-border shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  .glass-nav {
+    @apply bg-background/80 backdrop-blur-lg border-b border-border;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600;
+  }
+}
