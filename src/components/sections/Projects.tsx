@@ -30,13 +30,13 @@ export function Projects() {
             </div>
           </div>
 
-          <Link href="/archive">
+          <Link href="/work">
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="inline-flex items-center px-4 py-2 bg-secondary text-secondary-foreground rounded-full text-sm font-medium hover:bg-secondary/80 transition-colors"
             >
-              View Full Archive
+              View All Projects
               <ArrowRight className="ml-2 w-4 h-4" />
             </motion.button>
           </Link>

@@ -63,7 +63,7 @@ export default function NotFound() {
             <Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
               → Contact
             </Link>
-            <Link href="/archive" className="text-muted-foreground hover:text-primary transition-colors">
+            <Link href="/work" className="text-muted-foreground hover:text-primary transition-colors">
               → All Projects
             </Link>
           </div>
