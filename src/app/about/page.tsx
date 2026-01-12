@@ -1,5 +1,4 @@
 import { About } from '@/components/sections/About';
-import { Resume } from '@/components/sections/Resume';
 
 export default function AboutPage() {
     return (
@@ -14,12 +13,6 @@ export default function AboutPage() {
             <section className="pb-16">
                 <div className="container-max">
                     <About />
-                </div>
-            </section>
-
-            <section className="py-16 bg-secondary/30">
-                <div className="container-max">
-                    <Resume />
                 </div>
             </section>
         </div>
