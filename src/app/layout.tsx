@@ -128,6 +128,12 @@ export const metadata: Metadata = {
 
     // Services & Typos
     'Translation Services',
+    'Medical Translation Gujarati',
+    'Legal Translation Gujarati',
+    'Business Translation Gujarati',
+    'Certified Translator India',
+    'Clinical Trial Translation',
+    'Document Translation Services',
     'trnasltion', // Typo
     'translaton', // Typo
     'Medical Translation',
