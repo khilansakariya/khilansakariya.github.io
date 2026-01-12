@@ -81,6 +81,18 @@ export function About() {
             </p>
           </div>
 
+          {/* View Resume Button */}
+          <div className="mt-8">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 transition-all duration-300"
+            >
+              <FontAwesomeIcon icon={faFileAlt} className="mr-2" />
+              View Resume
+            </a>
+          </div>
 
         </motion.div>
 
