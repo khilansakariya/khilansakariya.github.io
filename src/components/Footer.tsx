@@ -39,18 +39,19 @@ export function Footer() {
   };
 
   const handleNavigation = (link: string) => {
-    if (link === 'Archive') {
-      router.push('/archive');
-    } else if (link === 'Resume') {
+    const routes: Record<string, string> = {
+      'About': '/about',
+      'Experience': '/experience',
+      'Skills': '/skills',
+      'Resume': '/resume.pdf',
+      'Projects': '/work',
+      'Contact': '/contact',
+    };
+
+    if (link === 'Resume') {
       window.open('/resume.pdf', '_blank');
     } else {
-      const currentPath = window.location.pathname;
-
-      if (currentPath === '/archive') {
-        router.push(`/#${link.toLowerCase()}`);
-      } else {
-        document.querySelector(`#${link.toLowerCase()}`)?.scrollIntoView({ behavior: 'smooth' });
-      }
+      router.push(routes[link] || '/');
     }
   };
 
