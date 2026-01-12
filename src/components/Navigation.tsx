@@ -65,10 +65,16 @@ export function Navigation() {
                   const isActive = item.href === '/'
                     ? pathname === '/'
                     : pathname === item.href || pathname?.startsWith(`${item.href}/`);
+                  const isPdf = item.href.endsWith('.pdf');
+                  const LinkComponent = isPdf ? 'a' : Link;
+                  const linkProps = isPdf
+                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                    : {};
                   return (
-                    <Link
+                    <LinkComponent
                       key={item.name}
                       href={item.href}
+                      {...linkProps}
                       className={clsx(
                         "px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 relative",
                         isActive
@@ -84,10 +90,9 @@ export function Navigation() {
                         />
                       )}
                       <span className="relative z-10 flex items-center gap-2">
-                        {/* Option to show icons on desktop too if desired, keeping minimal for now */}
                         {item.name}
                       </span>
-                    </Link>
+                    </LinkComponent>
                   );
                 })}
               </div>
@@ -124,10 +129,16 @@ export function Navigation() {
             <div className="container-max px-4 py-6 space-y-2">
               {navItems.map((item) => {
                 const isActive = pathname === item.href;
+                const isPdf = item.href.endsWith('.pdf');
+                const LinkComponent = isPdf ? 'a' : Link;
+                const linkProps = isPdf
+                  ? { target: '_blank', rel: 'noopener noreferrer' }
+                  : {};
                 return (
-                  <Link
+                  <LinkComponent
                     key={item.name}
                     href={item.href}
+                    {...linkProps}
                     className={clsx(
                       "flex items-center gap-4 p-4 rounded-xl transition-all duration-200",
                       isActive
@@ -142,7 +153,7 @@ export function Navigation() {
                       <item.icon className="w-5 h-5" />
                     </div>
                     <span className="font-medium text-lg">{item.name}</span>
-                  </Link>
+                  </LinkComponent>
                 );
               })}
             </div>
