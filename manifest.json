@@ -1,0 +1,79 @@
+{
+  "name": "Khilan Sakariya - Professional Gujarati Translator & Linguistic Expert",
+  "short_name": "Khilan Sakariya",
+  "description": "Professional Gujarati translator and linguistic expert specializing in English to Gujarati translation services. Expert in translation, proofreading, LQA testing, and linguistic services.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["business", "productivity", "education", "translation"],
+  "keywords": [
+    "Gujarati translator",
+    "English to Gujarati",
+    "EN > GU",
+    "EN > IN-GU",
+    "EN-GU translation",
+    "EN-IN-GU translation",
+    "translation services",
+    "medical translation",
+    "healthcare translation",
+    "academic translation",
+    "legal translation",
+    "business translation",
+    "technical translation",
+    "financial translation",
+    "banking translation",
+    "insurance translation",
+    "real estate translation",
+    "tourism translation",
+    "manufacturing translation",
+    "government translation",
+    "certified translation",
+    "linguistic expert",
+    "Gujarati translation",
+    "language consultant",
+    "translation specialist",
+    "proofreading/editing",
+    "MTPE",
+    "Machine Translation Post-Editing",
+    "AI translation editing"
+  ],
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Desktop view of Khilan Sakariya's Gujarati translation portfolio"
+    },
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile view of Khilan Sakariya's Gujarati translation portfolio"
+    }
+  ]
+} 

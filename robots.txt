@@ -1,8 +1,7 @@
-User-agent: Googlebot
-Disallow: /nogooglebot/
-
-User-agent: *
+User-Agent: *
 Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /api/
 
-Sitemap: https://khilansakariyaa.github.io/sitemap-index.xml
-Host: https://khilansakariyaa.github.io
+Sitemap: https://khilansakariya.github.io/sitemap.xml
