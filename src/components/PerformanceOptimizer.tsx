@@ -5,19 +5,8 @@ import { analytics } from '@/lib/analytics';
 
 export function PerformanceOptimizer() {
   useEffect(() => {
-    // Preload critical resources
-    const preloadLinks = [
-      { rel: 'preload', href: '/resume.pdf', as: 'document' },
-      { rel: 'preload', href: '/og-image.jpg', as: 'image' },
-    ];
-
-    preloadLinks.forEach(({ rel, href, as }) => {
-      const link = document.createElement('link');
-      link.rel = rel;
-      link.href = href;
-      if (as) link.setAttribute('as', as);
-      document.head.appendChild(link);
-    });
+    // Note: Preloading og-image and resume.pdf removed as they caused warnings
+    // og-image.jpg is for OG tags (not displayed on page), resume.pdf is downloaded on click
 
     // Lazy load images
     const images = document.querySelectorAll('img[data-src]');
