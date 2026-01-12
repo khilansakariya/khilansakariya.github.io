@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Mail, MapPin, Send, Globe, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Mail, MapPin, Send, Globe, Linkedin, Twitter, Instagram, CheckCircle, XCircle, X } from 'lucide-react';
 import emailjs from 'emailjs-com';
 
 const socialLinks = [
@@ -48,6 +48,8 @@ export function Contact() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState({ title: '', description: '', isSuccess: true });
 
   useEffect(() => {
     emailjs.init('EfjQckHjsdIeZaJSa');
@@ -85,13 +87,22 @@ export function Contact() {
       document.dispatchEvent(new CustomEvent('contact-submit'));
       setFormData({ name: '', email: '', subject: '', message: '' });
       setSubmitStatus('success');
-      alert('Thank you for your message! I\'ll get back to you soon.');
+      setModalMessage({
+        title: 'Thank You!',
+        description: "Your message has been sent successfully. I'll get back to you soon!",
+        isSuccess: true
+      });
+      setShowModal(true);
 
     } catch (error: unknown) {
       console.error('Email sending failed:', error);
-      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
       setSubmitStatus('error');
-      alert(`Email sending failed: ${errorMessage}. Please check the console for details or contact me directly at khilansakariya123@yahoo.com`);
+      setModalMessage({
+        title: 'Message Failed',
+        description: 'Unable to send message. Please try again or email me directly at khilansakariya123@yahoo.com',
+        isSuccess: false
+      });
+      setShowModal(true);
     } finally {
       setIsSubmitting(false);
     }
@@ -278,6 +289,63 @@ export function Contact() {
           </form>
         </motion.div>
       </div>
+
+      {/* Custom Themed Modal */}
+      <AnimatePresence>
+        {showModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+            onClick={() => setShowModal(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              className="relative w-full max-w-md glass-card p-8 rounded-2xl shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setShowModal(false)}
+                className="absolute top-4 right-4 p-2 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-secondary"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              {/* Icon */}
+              <div className="flex justify-center mb-6">
+                <div className={`p-4 rounded-full ${modalMessage.isSuccess ? 'bg-green-500/20' : 'bg-red-500/20'}`}>
+                  {modalMessage.isSuccess ? (
+                    <CheckCircle className="w-12 h-12 text-green-500" />
+                  ) : (
+                    <XCircle className="w-12 h-12 text-red-500" />
+                  )}
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-foreground mb-3 font-display">
+                  {modalMessage.title}
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  {modalMessage.description}
+                </p>
+                <button
+                  onClick={() => setShowModal(false)}
+                  className="px-8 py-3 bg-primary text-primary-foreground rounded-xl font-medium hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  {modalMessage.isSuccess ? 'Great!' : 'Try Again'}
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
